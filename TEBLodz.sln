@@ -1,0 +1,53 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.002.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Notatniki-04.10.2024", "Notatniki-04.10.2024\Notatniki-04.10.2024.csproj", "{BE2DD800-0ABF-4CC3-81C0-CE0C36E4DEE1}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Notatniki-04.10.2024 (1)", "Notatniki-04.10.2024", "{0987DBBB-21A7-48F8-AC6D-A3E3F2D23F21}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "GrupowaneZadania", "GrupowaneZadania", "{45323EDB-7F86-4B8D-83E5-37B6C518DD65}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Zadania-FOR", "Notatniki-04.10.2024\GrupowaneZadania\Zadania-FOR\Zadania-FOR.csproj", "{4A311B28-8022-4B8B-9307-BD3DF98594AD}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Zadania-IF", "Notatniki-04.10.2024\GrupowaneZadania\Zadania-IF\Zadania-IF.csproj", "{ABB51299-4295-4CBC-B470-5448DBD22455}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Zadania-TABONE", "Notatniki-04.10.2024\GrupowaneZadania\Zadania-TABONE\Zadania-TABONE.csproj", "{013B1DB6-27D9-4C90-90EF-CED816CCF408}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BE2DD800-0ABF-4CC3-81C0-CE0C36E4DEE1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BE2DD800-0ABF-4CC3-81C0-CE0C36E4DEE1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BE2DD800-0ABF-4CC3-81C0-CE0C36E4DEE1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BE2DD800-0ABF-4CC3-81C0-CE0C36E4DEE1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4A311B28-8022-4B8B-9307-BD3DF98594AD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4A311B28-8022-4B8B-9307-BD3DF98594AD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4A311B28-8022-4B8B-9307-BD3DF98594AD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4A311B28-8022-4B8B-9307-BD3DF98594AD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ABB51299-4295-4CBC-B470-5448DBD22455}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ABB51299-4295-4CBC-B470-5448DBD22455}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ABB51299-4295-4CBC-B470-5448DBD22455}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ABB51299-4295-4CBC-B470-5448DBD22455}.Release|Any CPU.Build.0 = Release|Any CPU
+		{013B1DB6-27D9-4C90-90EF-CED816CCF408}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{013B1DB6-27D9-4C90-90EF-CED816CCF408}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{013B1DB6-27D9-4C90-90EF-CED816CCF408}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{013B1DB6-27D9-4C90-90EF-CED816CCF408}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{45323EDB-7F86-4B8D-83E5-37B6C518DD65} = {0987DBBB-21A7-48F8-AC6D-A3E3F2D23F21}
+		{4A311B28-8022-4B8B-9307-BD3DF98594AD} = {45323EDB-7F86-4B8D-83E5-37B6C518DD65}
+		{ABB51299-4295-4CBC-B470-5448DBD22455} = {45323EDB-7F86-4B8D-83E5-37B6C518DD65}
+		{013B1DB6-27D9-4C90-90EF-CED816CCF408} = {45323EDB-7F86-4B8D-83E5-37B6C518DD65}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {4ADD264B-D901-4929-923C-B4090990903B}
+	EndGlobalSection
+EndGlobal
