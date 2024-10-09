@@ -33,7 +33,7 @@ namespace Zadania_TABONE
                 Console.WriteLine("Proszę wpisać poprawną liczbę całkowitą:");
             }
 
-            bool foundNumber = arrays.Contains(sNumber);
+            bool foundNumber = arrays.Contains(sNumber); // Metoda Contains sprawdza, czy zmienna sNumber znajduje się w kolekcji arrays. Zwraca ona wartość logiczną (true lub false):
             Console.WriteLine(foundNumber ? $"Liczba {sNumber} została znaleziona." : $"Liczba {sNumber} nie została znaleziona.");
         }
         /*
