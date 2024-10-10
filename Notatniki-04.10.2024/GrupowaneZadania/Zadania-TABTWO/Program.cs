@@ -92,15 +92,15 @@ namespace Zadania_TABTWO
         {
             int[,] array = new int[3, 3];
             Console.WriteLine("Wprowadź wartości do macierzy 3x3:");
-            for (int i = 0; i < 3; i++)
-                for (int j = 0; j < 3; j++)
+            for (int i = 0; i < array.GetLength(0); i++)
+                for (int j = 0; j < array.GetLength(1); j++)
                     array[i, j] = int.Parse(Console.ReadLine());
 
             Console.Write("Podaj wartość do wyszukania: ");
             int target = int.Parse(Console.ReadLine());
 
-            for (int i = 0; i < 3; i++)
-                for (int j = 0; j < 3; j++)
+            for (int i = 0; i < array.GetLength(0); i++)
+                for (int j = 0; j < array.GetLength(1); j++)
                     if (array[i, j] == target)
                     {
                         Console.WriteLine($"Znaleziono wartość {target} na pozycji ({i}, {j}).");
