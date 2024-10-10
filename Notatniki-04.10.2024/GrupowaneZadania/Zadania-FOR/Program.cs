@@ -30,7 +30,7 @@ namespace Zadania_FOR
             {
                 array[i] = i * 2;
             }
-            Console.WriteLine("Wyniki:");
+            Console.Write("Wyniki: ");
             foreach (var num in array)
                 Console.Write($"{num} ");
             Console.WriteLine();
