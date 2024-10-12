@@ -20,8 +20,19 @@ namespace Zadania_IF
          * Napisz program, który pyta użytkownika o jego wiek i wypisuje, 
          * czy jest osobą dorosłą, czy nieletnią (18 lat jako granica). 
         */
-        static void Zad2(int age) => 
-            Console.WriteLine(age >= 18 ? "Pełnoletni" : "Niepełnoletni");
+        static void Zad2(int age)
+        {
+            if(age < 0)
+            {
+                Console.WriteLine("Wiek nie może być ujemny");
+            } else if(age >= 18)
+            {
+                Console.WriteLine("Pełnoletni");
+            } else
+            {
+                Console.WriteLine("Niepełnoletni");
+            }
+        }
         /* 
          * 3. Porównanie dwóch liczb:
          * Napisz program, który wczytuje dwie liczby od użytkownika i wypisuje, 

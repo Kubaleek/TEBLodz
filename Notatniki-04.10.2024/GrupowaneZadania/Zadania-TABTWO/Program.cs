@@ -75,10 +75,14 @@ namespace Zadania_TABTWO
                 for (int j = 0; j < array.GetLength(1); j++)
                 {
                     if (j < i)
-                        Console.Write("0 ");
-                    else
-                        Console.Write($"{array[i, j]} ");
+                        array[i, j] = 0;
                 }
+            }
+
+            for (int i = 0; i < array.GetLength(0); i++)
+            {
+                for (int j = 0; j < array.GetLength(1); j++)
+                    Console.Write($"{array[i, j]} ");
                 Console.WriteLine();
             }
         }
@@ -129,7 +133,13 @@ namespace Zadania_TABTWO
                 {
                     Console.Write($"Ocena z przedmiotu {j + 1}: ");
                     // Wczytanie oceny od użytkownika i zapisanie do tablicy.
-                    grades[i, j] = int.Parse(Console.ReadLine());
+                    int grade = int.Parse(Console.ReadLine());
+                    while (grade <= 0 || grade > 6)
+                    {
+                        Console.WriteLine("Zła Wartość");
+                        grade = int.Parse(Console.ReadLine());
+                    }
+                    grades[i, j] = grade;
                 }
                 // Obliczanie średniej ocen dla danego ucznia.
                 double average = 0;
@@ -139,7 +149,7 @@ namespace Zadania_TABTWO
                 averages[i] = average / subCount;
             }
             Console.WriteLine("\n| Uczeń | Przedmiot 1 | Przedmiot 2 | Przedmiot 3 | Przedmiot 4 | Przedmiot 5 | Średnia |");
-            Console.WriteLine(new string('-', 89)); // tworzy stringa - 79 razy
+            Console.WriteLine(new string('-', 89)); // tworzy stringa
 
             // Wyświetlanie ocen i średnich dla każdego ucznia.
             for (int i = 0; i < stdCount; i++)
@@ -153,7 +163,7 @@ namespace Zadania_TABTWO
                 // Wyświetlanie średniej z dokładnością do dwóch miejsc po przecinku.
                 Console.WriteLine($"|  {averages[i]:F2}   |");
             }
-            Console.WriteLine(new string('-', 89)); // tworzy stringa - 99 razy
+            Console.WriteLine(new string('-', 89)); // tworzy stringa
         }
 
         static void Main(string[] args)
