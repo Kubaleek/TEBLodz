@@ -246,7 +246,7 @@ namespace Notatniki_11._10._2024
             int poletrojkata = Zad13(4, 6);
             Console.WriteLine($"Pole Trójkata wynosi {poletrojkata}");
             // ------------- Zadanie 14 ----------------
-            Zad14(8);
+            Zad14(10);
             // ------------- Zadanie 15 ----------------
             int[] tabes = { 6, 7, 9, 12, 5, 2 };
             int[] sortTabes = Zad15(tabes);
