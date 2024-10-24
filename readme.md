@@ -15,5 +15,3 @@ Witaj w repozytorium TebLodz! Tutaj znajdziesz notatki oraz rozwiązania zadań 
 - Tworzenie i zarządzanie bazami danych
 - Tworzenie stron i aplikacji internetowych
 - Bazy danych
-
-Zachęcamy do przeglądania materiałów i dzielenia się swoimi uwagami!
