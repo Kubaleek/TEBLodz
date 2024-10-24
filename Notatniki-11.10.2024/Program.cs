@@ -51,11 +51,9 @@ namespace Notatniki_11._10._2024
         {
             if (a > b)
                 Console.WriteLine($"liczba A: {a} jest wieksza od {b}");
-
-            if (a < b)
-                Console.WriteLine($"Liczba B: {b} jest wiekszy od {a}");
-
-            if (a == b)
+            else if (a < b)
+                Console.WriteLine($"Liczba B: {b} jest wieksza od {a}");
+            else
                 Console.WriteLine($"Liczby A i B: {a}, {b} są równe");
         }
         //  6. Napisz funkcję, która sprawdza, czy liczba jest liczbą pierwszą.
@@ -64,11 +62,9 @@ namespace Notatniki_11._10._2024
             bool LiczbaPierwsza = true;
 
             if (n <= 1)
-            {
                 LiczbaPierwsza = false;
-            }
 
-            for (int i = 2; i <= Math.Sqrt(n); i++)
+            for (int i = 2; i < n; i++)
             {
                 if (n % i == 0)
                 {
@@ -79,13 +75,9 @@ namespace Notatniki_11._10._2024
             }
 
             if (LiczbaPierwsza)
-            {
                 Console.WriteLine($"{n} jest to liczba pierwsza");
-            }
             else
-            {
                 Console.WriteLine($"{n} nie jest to liczba pierwsza");
-            }
         }
         //  7. Napisz funkcję, która przyjmuje tablicę liczb całkowitych i zwraca ich sumę.
         static int Zad7(int[] tab)
@@ -100,26 +92,16 @@ namespace Notatniki_11._10._2024
         //  8. Napisz funkcję, która sprawdza, czy dany string jest palindromem.
         static void Zad8(string text)
         {
-            bool isPalindrom()
+            int l = text.Length;
+            for (int i = 0; i < l; i++)
             {
-                int l = text.Length;
-                for (int i = 0; i < l / 2; i++)
+                if (text[i] != text[l - i - 1])
                 {
-                    if (text[i] != text[l - i - 1])
-                    {
-                        return false;
-                    }
+                    Console.WriteLine("Nie jest Palindromem");
+                    return;
                 }
-                return true;
             }
-            if (isPalindrom())
-            {
-                Console.WriteLine("jest Palindronem");
-            }
-            else
-            {
-                Console.WriteLine("Nie jest Palindronem");
-            }
+            Console.WriteLine("Jest Palindromem");
         }
         //  9. Napisz funkcję, która zwraca N-tą liczbę w ciągu Fibonacciego.
         //  (REKURENCJA) WZOR Nazwa_Funkcji(a-1)+Nazwa_Funkcji(a-2)
@@ -192,7 +174,7 @@ namespace Notatniki_11._10._2024
         //  14. Napisz funkcję, która wypisuje N liczb ciągu Fibonacciego.
         static void Zad14(int f)
         {
-            int a = 0, b = 1;
+            int a = 1, b = 1;
 
             Console.Write(a + " ");
 
@@ -248,7 +230,7 @@ namespace Notatniki_11._10._2024
             int suma = Zad7(tab);
             Console.WriteLine(suma);
             // ------------- Zadanie 8 ----------------
-            Zad8("radar");
+            Zad8("kajak");
             // ------------- Zadanie 9 ----------------
             Zad9(6);
             // ------------- Zadanie 10 ----------------
@@ -265,7 +247,7 @@ namespace Notatniki_11._10._2024
             int poletrojkata = Zad13(4, 6);
             Console.WriteLine($"Pole Trójkata wynosi {poletrojkata}");
             // ------------- Zadanie 14 ----------------
-            Zad14(3);
+            Zad14(8);
             // ------------- Zadanie 15 ----------------
             int[] tabes = { 6, 7, 9, 12, 5, 2 };
             int[] sortTabes = Zad15(tabes);
