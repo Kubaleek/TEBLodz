@@ -95,6 +95,9 @@ namespace Notatniki_11._10._2024
             int l = text.Length;
             for (int i = 0; i < l; i++)
             {
+                // radar = radar jest palindromem tak samo jak słowo kajak
+                // test = tset jest nie jest palindromem
+                // jeśli znajdzie różnice to zwróci komunikat odpowiedni że nie jest
                 if (text[i] != text[l - i - 1])
                 {
                     Console.WriteLine("Nie jest Palindromem");
@@ -105,7 +108,7 @@ namespace Notatniki_11._10._2024
         }
         //  9. Napisz funkcję, która zwraca N-tą liczbę w ciągu Fibonacciego.
         //  (REKURENCJA) WZOR Nazwa_Funkcji(a-1)+Nazwa_Funkcji(a-2)
-        static void Zad9(int n)
+        static int Zad9(int n)
         {
             int Fibo(int a)
             {
@@ -115,11 +118,7 @@ namespace Notatniki_11._10._2024
                     return 1;
                 return Fibo(a - 1) + Fibo(a - 2);
             }
-            for(int i = 0; i < n; i++)
-            {
-                Console.Write($"{Fibo(i)} ");
-            }
-            Console.WriteLine();
+            return Fibo(n);
         }
         //  10. Napisz funkcję, która przyjmuje tablicę liczb całkowitych i zwraca ich średnią
         //  arytmetyczną.
@@ -174,18 +173,10 @@ namespace Notatniki_11._10._2024
         //  14. Napisz funkcję, która wypisuje N liczb ciągu Fibonacciego.
         static void Zad14(int f)
         {
-            int a = 1, b = 1;
-
-            Console.Write(a + " ");
-
-            for(int i = 1; i < f; i++)
+            for (int i = 0; i < f; i++)
             {
-                Console.Write(b + " ");
-                int t = b;
-                b = a + b;
-                a = t;
+                Console.Write($"{Zad9(i)} ");
             }
-
             Console.WriteLine();
         }
         //  15. Napisz funkcję, która przyjmuje Tablicę liczb całkowitych oraz sortującą ją.
@@ -193,8 +184,14 @@ namespace Notatniki_11._10._2024
         static int[] Zad15(int[] tabes)
         {
             int n = tabes.Length;
+            // przechodzi przez wszystkie elementy tablicy, z wyjątkiem ostatniego
             for (int i = 0; i < n - 1; i++)
             {
+                /* 
+                 * porównuje sąsiednie elementy 
+                 * zmniejszając zakres, ponieważ ostatnie 
+                 * i elementy są już posortowane.
+                */
                 for (int j = 0; j < n - i - 1; j++)
                 {
                     // Sprawdzanie, czy bieżący element jest większy od następnego
@@ -203,7 +200,7 @@ namespace Notatniki_11._10._2024
                         // Zapisanie bieżącego elementu do zmiennej pomocniczej
                         int t = tabes[j];
 
-                        // Zamiana miejscami bieżącego elementu z następnym
+                        // Zamiana miejscami
                         tabes[j] = tabes[j + 1];
                         tabes[j + 1] = t;
                     }
@@ -232,7 +229,9 @@ namespace Notatniki_11._10._2024
             // ------------- Zadanie 8 ----------------
             Zad8("kajak");
             // ------------- Zadanie 9 ----------------
-            Zad9(6);
+            int n = 10; // N-ta liczba Fibonacciego
+            int w = Zad9(n);
+            Console.WriteLine($"N-ta liczba w ciągu Fibonacciego dla N = {n} to: {w}");
             // ------------- Zadanie 10 ----------------
             int[] array = { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
             int wynik = Zad10(array);
