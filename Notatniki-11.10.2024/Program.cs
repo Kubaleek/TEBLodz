@@ -187,14 +187,8 @@ namespace Notatniki_11._10._2024
             // przechodzi przez wszystkie elementy tablicy, z wyjątkiem ostatniego
             for (int i = 0; i < n - 1; i++)
             {
-                /* 
-                 * porównuje sąsiednie elementy 
-                 * zmniejszając zakres, ponieważ ostatnie 
-                 * i elementy są już posortowane.
-                */
                 for (int j = 0; j < n - i - 1; j++)
                 {
-                    // Sprawdzanie, czy bieżący element jest większy od następnego
                     if (tabes[j] > tabes[j + 1])
                     {
                         // Zapisanie bieżącego elementu do zmiennej pomocniczej
