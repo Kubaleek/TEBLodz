@@ -27,7 +27,7 @@ namespace Lekcja_31._10._2024
         }
         public override string PrzedstawSie()
         {
-            return $"Jestem Krową o imieniu {Imie}, mam lat {Wiek}";
+            return $"Jestem krową o imieniu {Imie}, mam lat {Wiek}";
         }
     }
 }

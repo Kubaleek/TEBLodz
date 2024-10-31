@@ -9,13 +9,18 @@ namespace Lekcja_31._10._2024
     {
         static void Main(string[] args)
         {
-            Kot kot1 = new Kot("Stefan", 6, "Rudy");
-            Pies Pies1 = new Pies("Piotrek", 4, "Owczarek Niemiecki");
-            Krowa Krowa1 = new Krowa("Janek", 2);
+            Kot Kot = new Kot("Stefan", 6, "Rudy");
+            Pies Pies = new Pies("Piotrek", 4, "Owczarek Niemiecki");
+            Krowa Krowa = new Krowa("Janek", 2);
 
-            Console.WriteLine($"{kot1.PrzedstawSie()}");
-            Console.WriteLine($"{Pies1.PrzedstawSie()}");
-            Console.WriteLine($"{Krowa1.PrzedstawSie()}");
+
+            Console.WriteLine($"" +
+                $"{Kot.PrzedstawSie()} \n" +
+                $"{Pies.PrzedstawSie()} \n" +
+                $"{Krowa.PrzedstawSie()}"
+            );
+
+
 
             Console.ReadKey();
         }

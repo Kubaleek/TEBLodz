@@ -20,7 +20,7 @@ namespace Lekcja_31._10._2024
             _rasa = rasa;
         }
 
-        public string Rasa
+        public string Rasa // Uzyskania dostepu do _rasa
         {
             get { return _rasa; }
             set { _rasa = value; }
@@ -35,7 +35,7 @@ namespace Lekcja_31._10._2024
         }
         public override string PrzedstawSie()
         {
-            return $"Jestem kotem o imieniu {Imie}, mam lat {Wiek} i moja rasa {Rasa}";
+            return $"Jestem psem o imieniu {Imie}, mam lat {Wiek} i moja rasa {Rasa}";
         }
     }
 }

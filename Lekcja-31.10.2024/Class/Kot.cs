@@ -12,6 +12,8 @@ namespace Lekcja_31._10._2024
 
         public Kot() : base()
         {
+            // _imie
+            // _wiek
             _kolor = string.Empty;
         }
 
