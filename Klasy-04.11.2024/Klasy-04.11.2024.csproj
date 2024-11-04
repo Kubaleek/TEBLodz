@@ -53,8 +53,6 @@
     <None Include="App.config" />
     <None Include="C# Klasy.pdf" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Notatniki\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
