@@ -50,37 +50,38 @@ namespace Klasy_04._11._2024.Class
 
         public string Marka
         {
-            get { return _marka; }
-            set { _marka = value; }
+            get => _marka;
+            set => _marka = value;
         }
 
         public string Model
         {
-            get { return _model; }
-            set { _model = value; }
+            get => _model;
+            set => _model = value;
         }
 
         public int RokProdukcji
         {
-            get { return _rokProdukcji; }
-            set { _rokProdukcji = value; }
+            get => _rokProdukcji;
+            set => _rokProdukcji = value;
         }
 
         public int Przebieg
         {
-            get { return _przebieg; }
-            set { _przebieg = value; }
+            get => _przebieg;
+            set => _przebieg = value;
         }
+
 
         public void Jazda(int kilometry)
         {
             Przebieg += kilometry;
-            Console.WriteLine($"Samochód przejechał {kilometry} kilometrów.");
+            Console.WriteLine($"\nSamochód przejechał {kilometry} kilometrów.\n");
         }
 
         public override string ToString()
         {
-            return $"Samochód: \n Marka: {Marka}, Model: {Model}, Rok Produkcji: {RokProdukcji}, Przebieg: {Przebieg} \n";
+            return $"\nMarka: {Marka}, Model: {Model}, Rok Produkcji: {RokProdukcji}, Przebieg: {Przebieg} \n";
         }
 
         public void Wypisz() => Console.WriteLine(ToString());

@@ -73,18 +73,18 @@ namespace Klasy_04._11._2024.Class
         public void Wynajmij()
         {
             CzyWynajmowany = true;
-            Console.WriteLine("Dom został wynajęty");
+            Console.WriteLine("\nDom został wynajęty\n");
         }
 
         public void ZwrocDom()
         {
             CzyWynajmowany = false;
-            Console.WriteLine("Dom został zwrócony");
+            Console.WriteLine("\nDom został zwrócony\n");
         }
 
         public override string ToString()
         {
-            return $"Dom\nAdres: {Adres}, Liczba Pokoi: {LiczbaPokoi}, Powierzchnia: {Powierzchnia} m2, Czy Wynajmowany: {CzyWynajmowany}";
+            return $"\nAdres: {Adres}, Liczba Pokoi: {LiczbaPokoi}, Powierzchnia: {Powierzchnia} m2, Czy Wynajmowany: {CzyWynajmowany}\n";
         }
 
         public void Wypisz() => Console.WriteLine(ToString());

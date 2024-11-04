@@ -45,6 +45,7 @@
   <ItemGroup>
     <Compile Include="Class\Auto.cs" />
     <Compile Include="Class\Dom.cs" />
+    <Compile Include="Class\Student.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
