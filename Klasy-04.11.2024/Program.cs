@@ -38,7 +38,7 @@ namespace Klasy_04._11._2024
             {
                 Console.Clear();
                 Console.WriteLine("====== 2/2 Etapu ======");
-                Console.WriteLine($"{name}, zapraszam Ciebie do mojego rozbudowanego interfejsu,");
+                Console.WriteLine($"{name}, Zapraszam ciebie do mojego rozbudowanego interfejsu,");
                 Console.WriteLine("na którym będzie można zobaczyć działanie różnych klas:");
                 Console.WriteLine("* Auto,\n* Student,\n* Dom,");
                 Console.WriteLine("Autor: Kuba Król");
