@@ -3,7 +3,7 @@ function Pole(promien){
 }
 
 function obliczPole(){
-    var liczba = document.getElementById("input").value;
-    var wynik = Pole(liczba);
+    let liczba = document.getElementById("input").value;
+    let wynik = Pole(liczba);
     alert(wynik);
 }
