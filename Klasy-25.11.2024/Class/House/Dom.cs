@@ -30,6 +30,17 @@ namespace Klasy_25._11._2024.Class.House
         public Dom(string adres, int liczbaPokoi, double powierzchnia, bool czyKupiony, Garaz garaz)
             => (_adres, _liczbaPokoi, _powierzchnia, _czyKupiony, _garaz) = (adres, liczbaPokoi, powierzchnia, czyKupiony, garaz);
 
+
+        public void SprzedajMieszkanie() {
+            CzyKupiony = false;
+
+            Console.ForegroundColor = ConsoleColor.Green;
+
+            Console.WriteLine("\nDom został sprzedany");
+
+            Console.ResetColor();
+        }
+
         public override string ToString() =>
             $"Adres\n   * {Adres}\n" +
             $"Liczba pokoi\n   * {LiczbaPokoi}\n" +

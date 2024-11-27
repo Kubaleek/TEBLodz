@@ -54,7 +54,10 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Scripts\Menu.cs" />
+    <Compile Include="Scripts\MenuItems\AktualneDomy.cs" />
+    <Compile Include="Scripts\MenuItems\Cars\Auta.cs" />
     <Compile Include="Scripts\MenuItems\Dokumentacja.cs" />
+    <Compile Include="Scripts\MenuItems\Houses\Domy.cs" />
     <Compile Include="Scripts\MenuItems\KupMieszkanie.cs" />
   </ItemGroup>
   <ItemGroup>

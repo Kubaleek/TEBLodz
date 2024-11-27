@@ -14,13 +14,25 @@ namespace Klasy_25._11._2024.Scripts
 
         private static void S0()
         {
-            Console.Write("Podaj swoje imię: ");
-            imie = Console.ReadLine();
 
-            Console.WriteLine($"\nNaciśnij dowolny klawisz, aby przejść dalej...");
-            Console.ReadKey();
+            while (true)
+            {
+                Console.Write("Podaj swoje imię: ");
+                imie = Console.ReadLine();
 
-            S1();
+                if (imie != "")
+                {
+                    Console.WriteLine("Naciśnij dowolny klawisz, aby przejść dalej...");
+                    Console.ReadKey();
+                    S1();
+                    break;
+                }
+
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.WriteLine("Wpisz jakieś imie");
+                Console.ResetColor();
+            }
+
         }
 
         private static void S1()
@@ -46,24 +58,23 @@ namespace Klasy_25._11._2024.Scripts
 
                 // Opcje w menu
                 Console.WriteLine();
-                Console.WriteLine("1. Sprawdź Aktualne Mieszkania");
-                Console.WriteLine("2. Zbuduj Mieszkanie");
-                Console.WriteLine("3. Kup Mieszkanie");
-                Console.WriteLine("4. Dokumentacja Zadania");
-                Console.WriteLine("5. Wyjście");
+                Console.WriteLine("1. Sprawdź Twoje Aktualne Mieszkania");
+                Console.WriteLine("2. Kup Mieszkanie");
+                Console.WriteLine("3. Dokumentacja Zadania");
+                Console.WriteLine("4. Wyjście");
                 Console.WriteLine();
 
                 Console.ForegroundColor = ConsoleColor.Yellow; // Ustawiamy na żółty
                 Console.Write("Wybierz opcję: ");
                 Console.ResetColor(); // Resetujemy kolor na domyślny
 
-                if (!int.TryParse(Console.ReadLine(), out int wybor) || wybor < 1 || wybor > 5)                
+                if (!int.TryParse(Console.ReadLine(), out int wybor) || wybor < 1 || wybor > 4)                
                 // Ten kod sprawdza, czy to, co użytkownik wpisał, jest liczbą.
                 // Jeśli tak, zapisuje ją do zmiennej, jeśli nie, wyświetla komunikat o błędzie.
                 {
                     Console.Clear();
                     Console.ForegroundColor = ConsoleColor.Red;
-                    Console.WriteLine("Niepoprawny wybór. Wybierz opcję w zakresie od 1 do 5 ponownie..");
+                    Console.WriteLine("Niepoprawny wybór. Wybierz opcję w zakresie od 1 do 4 ponownie..");
                     Console.ResetColor();
 
                     Console.ReadKey();
@@ -71,15 +82,19 @@ namespace Klasy_25._11._2024.Scripts
 
                 switch (wybor)
                 {
-                    case 3:
+                    case 1:
+                        Console.Clear();
+                        AktualneDomy.MenuAktualneDomy();
+                        break;
+                    case 2:
                         Console.Clear();
                         KupMieszkanie.MenuKupMieszkania();
                         break;
-                    case 4:
+                    case 3:
                         Console.Clear();
                         Dokumentacja.DokumentacjaZadania();
                         break;
-                    case 5:
+                    case 4:
                         Environment.Exit(0);
                         break;
                     default:

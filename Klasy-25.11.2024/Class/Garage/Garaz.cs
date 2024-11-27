@@ -13,7 +13,10 @@ namespace Klasy_25._11._2024.Class.Garage
         public int MaksymalnaLiczbaAut { get => _maksymalnaLiczbaAut; set => _maksymalnaLiczbaAut = value; }
 
         public Garaz(List<Auto> auta, int maksymalnaLiczbaAut)
-            => (_auta, _maksymalnaLiczbaAut) = (auta, maksymalnaLiczbaAut);
+        {
+            _auta = auta ?? new List<Auto>();  // Zapewnia inicjalizację listy, jeżeli jest null
+            _maksymalnaLiczbaAut = maksymalnaLiczbaAut;
+        }
 
 
         public void DodajAuto(Auto auto)
