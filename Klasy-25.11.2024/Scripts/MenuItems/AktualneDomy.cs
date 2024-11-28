@@ -221,7 +221,7 @@ namespace Klasy_25._11._2024.Scripts.MenuItems
 
                 if (wybranyDom.Garaz.Auta.Count != 0)
                 {
-                    Console.WriteLine("\nWybierz auto do dodania:\n");
+                    Console.WriteLine("\nWybierz auto do usunięcie:\n");
                     
                     for(int i = 0; i < wybranyDom.Garaz.Auta.Count; i++)
                     {
@@ -232,10 +232,16 @@ namespace Klasy_25._11._2024.Scripts.MenuItems
                     if (int.TryParse(Console.ReadLine(), out int numerAuta) && numerAuta >= 1 && numerAuta <= CarsList.Count)
                     {
                         Auto wybraneAuto = CarsList[numerAuta - 1];
-                        wybranyDom.Garaz.UsunAuto(wybraneAuto);
-                        Console.ForegroundColor = ConsoleColor.Green;
-                        Console.WriteLine($"\nAuto {wybraneAuto.Marka} {wybraneAuto.Model} zostało usunięte z garażu w mieszkaniu o adresie {wybranyDom.Adres}.");
-                        Console.ResetColor();
+                        if (wybranyDom.Garaz.UsunAuto(wybraneAuto))
+                        {
+                            Console.ForegroundColor = ConsoleColor.Green;
+                            Console.WriteLine($"\nAuto {wybraneAuto.Marka} {wybraneAuto.Model} zostało usunięte z garażu w mieszkaniu o adresie {wybranyDom.Adres}.");
+                            Console.ResetColor();
+                        }
+                        else
+                        {
+                            Console.WriteLine("\nNie znaleziono auta");
+                        }
                     }
                     else
                     {
@@ -247,7 +253,7 @@ namespace Klasy_25._11._2024.Scripts.MenuItems
                 else
                 {
                     Console.ForegroundColor = ConsoleColor.Red;
-                    Console.WriteLine("Ten garaż jest już pusty.");
+                    Console.WriteLine("\nnie ma aut do usunięcia.");
                     Console.ResetColor();
                 }
             }
@@ -306,7 +312,7 @@ namespace Klasy_25._11._2024.Scripts.MenuItems
                 else
                 {
                     Console.ForegroundColor = ConsoleColor.Red;
-                    Console.WriteLine("Ten garaż jest już pusty.");
+                    Console.WriteLine("\nTen garaż jest już pusty.");
                     Console.ResetColor();
                 }
             }

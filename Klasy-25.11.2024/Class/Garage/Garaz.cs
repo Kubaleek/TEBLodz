@@ -31,17 +31,15 @@ namespace Klasy_25._11._2024.Class.Garage
                 Console.WriteLine("Brak miejsca w garażu!");
             }
         }
-        public void UsunAuto(Auto auto)
-
+        public bool UsunAuto(Auto auto)
         {
             if (Auta.Remove(auto))
             {
-                Console.WriteLine("Usunięto auto z garażu.");
+                return true;
             }
             else
-
             {
-                Console.WriteLine("Nie znaleziono auta w garażu.");
+                return false; 
             }
         }
 
