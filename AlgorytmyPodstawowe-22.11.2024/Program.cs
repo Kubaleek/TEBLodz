@@ -124,33 +124,6 @@
         //  kwadratowego z liczby, ponieważ jeśli liczba ma dzielnik większy od swojego pierwiastka,
         //  to drugi dzielnik musi być mniejszy.
 
-        static Action<int> Zad5 = (n) =>
-        {
-
-            Console.WriteLine($"\nZadanie 5:\n");
-
-            Console.WriteLine($"Rozkład liczby {n} na czynniki pierwsze:");
-
-            while (n % 2 == 0)
-            {
-                Console.Write($"{2} ");
-                n /= 2;
-            }
-
-            for (int i = 3; i * i <= n; i += 2)
-            {
-                while (n % i == 0)
-                {
-                    Console.Write($"{i} "); 
-                    n /= i; 
-                }
-            }
-
-            if (n > 1) Console.Write($"{n}"); // Wypisujemy ostatni czynnik
-
-            Console.WriteLine();
-        };
-
 
         //  Zasada działania algorytmu:
         //  1. Zakładamy, że pierwszy element zbioru jest zarówno najmniejszy, jak i największy.
@@ -189,29 +162,6 @@
         //  4. Proces jest powtarzany aż do momentu, gdy w trakcie jednej pełnej iteracji nie dojdzie do
         //  żadnej zamiany.
 
-        static Action<int[]> Zad7 = (n) =>
-        {
-            Console.WriteLine($"\nZadanie 7:\n");
-
-            int t = n.Length;
-
-            for (int i = 0; i < t - 1; i++)
-            {
-                for (int j = 0; j < t - i - 1; j++)
-                {
-                    if (n[j] > n[j + 1])
-                    {
-
-                        int d = n[j];
-                        n[j] = n[j + 1];
-                        n[j + 1] = d;
-
-                    }
-                }
-            }
-
-            Console.WriteLine(string.Join(", ", n));
-        };
 
         //  Zasada działania algorytmu:
         //  1. Algorytm przechodzi przez zbiór elementów i znajduje najmniejszy element.
@@ -222,38 +172,6 @@
         //  4. Algorytm kończy pracę, gdy wszystkie elementy zostaną posortowane.
         //  NIE STOSUJEMY ŻADNYCH METOD SORTUJĄCYCH ELEMENTY W TABLICY!
 
-        static Action<int[]> Zad8 = (n) =>
-        {
-            Console.WriteLine($"\nZadanie 8:\n");
-
-            int t = n.Length;
-
-            for (int i = 0; i < t - 1; i++)
-            {
-                int m = i;
-
-                // Szukamy najmniejszy element
-                for (int j = i + 1; j < t; j++)
-                {
-                    if (n[j] < n[m])
-                    {
-                        m = j; // mniejszy element
-                    }
-                }
-
-
-                // Zamiana mniejszy element z elementem na pozycji i
-                if (m != i)
-                {
-                    int tmp = n[i];
-                    n[i] = n[m];
-                    n[m] = tmp;
-                }
-            }
-
-            Console.WriteLine(string.Join(", ", n));
-
-        };
 
 
         //  Zasada działania algorytmu:
@@ -266,30 +184,6 @@
         //  4. Proces kończy się, gdy wszystkie elementy znajdują się w posortowanej części.
         //  NIE STOSUJEMY ŻADNYCH METOD SORTUJĄCYCH ELEMENTY W TABLICY!
 
-        static Action<int[]> Zad9 = (n) =>
-        {
-            Console.WriteLine($"\nZadanie 9 \n");
-
-            int t = n.Length;
-
-            for (int i = 1; i < t; i++)
-            {
-                int c = n[i]; // do wstawienia
-                int j = i - 1;
-
-                while(j >= 0 && n[j] > c)
-                {
-                    n[j + 1] = n[j]; // przesuwamy wiekszy element w prawo
-                    j--; // do poprzedniego elementu
-                }
-
-
-                // wstawienie odpowiednie miejsce
-                n[j + 1] = c;
-            }
-
-            Console.WriteLine(string.Join(", ", n));
-        };
 
         static void Main(string[] args)
         {
@@ -301,14 +195,17 @@
 
             Zad4(10);
 
-            Zad5(64);
+            // Zad 5
 
             int[] n = { 12, 5, 9, 20, 4 };
 
             Zad6(n);
-            Zad7(n);
-            Zad8(n);
-            Zad9(n);
+
+            // Zad 7
+
+            // Zad 8
+
+            // Zad 9
         }
 
     }
