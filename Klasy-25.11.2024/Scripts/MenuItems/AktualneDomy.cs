@@ -162,9 +162,11 @@ namespace Klasy_25._11._2024.Scripts.MenuItems
                     {
                         Auto wybraneAuto = CarsList[numerAuta - 1];
                         wybranyDom.Garaz.DodajAuto(wybraneAuto);
-                        Console.ForegroundColor = ConsoleColor.Green;
+
+                        Console.ForegroundColor = ConsoleColor.Green; // ustawia sie tekst koloru
                         Console.WriteLine($"\nAuto {wybraneAuto.Marka} {wybraneAuto.Model} zostało dodane do garażu w mieszkaniu o adresie {wybranyDom.Adres}.");
-                        Console.ResetColor();
+                        Console.ResetColor(); 
+
                     }
                     else
                     {

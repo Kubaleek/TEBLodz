@@ -13,10 +13,11 @@
 
         // Funkcja nic nie zwraca oraz przyjmuje parametr n o typie int
         static Action<int> Zad1 = (n) => {
-
+            Console.ForegroundColor = ConsoleColor.Yellow;
             Console.WriteLine($"Zadanie 1:\n");
+            Console.ResetColor();
 
-            if(n < 2)
+            if (n < 2)
             {
                 Console.WriteLine("nie jest ona liczbą pierwszą\n");
             }
@@ -42,7 +43,9 @@
 
         static Action<int, int> Zad2 = (a, b) =>
         {
+            Console.ForegroundColor = ConsoleColor.Yellow;
             Console.WriteLine($"Zadanie 2:\n");
+            Console.ResetColor();
 
             while (b != 0)
             {
@@ -64,7 +67,9 @@
 
         static Action<string, int> Zad3 = (tekst, klucz) =>
         {
+            Console.ForegroundColor = ConsoleColor.Yellow;
             Console.WriteLine($"Zadanie 3:\n");
+            Console.ResetColor();
 
             string txt = "";
 
@@ -98,7 +103,9 @@
 
         static Action<int> Zad4 = (a) =>
         {
+            Console.ForegroundColor = ConsoleColor.Yellow;
             Console.WriteLine($"Zadanie 4:\n");
+            Console.ResetColor();
 
             static int Fibo(int a)
             {
@@ -125,15 +132,12 @@
 
         static Action<int> Zad5 = (a) =>
         {
+            Console.ForegroundColor = ConsoleColor.Yellow;
             Console.WriteLine($"\nZadanie 5:\n");
-
-            if (a < 2)
-            {
-                Console.WriteLine("liczba musi być wieksza niż 1 \n");
-            }
+            Console.ResetColor();
 
             Console.Write($"Czynniki pierwsze liczby {a} to: ");
-            for (int i = 2; i < a; i++)
+            for (int i = 2; i <= a; i++)
             {
                 while(a % i == 0)
                 {
@@ -154,7 +158,9 @@
 
         static Action<int[]> Zad6 = (n) =>
         {
+            Console.ForegroundColor = ConsoleColor.Yellow;
             Console.WriteLine($"\n\nZadanie 6:\n");
+            Console.ResetColor();
 
             int min = n[0];
             int max = n[0];
@@ -184,14 +190,15 @@
 
         static Action<int[]> Zad7 = (n) =>
         {
-
+            Console.ForegroundColor = ConsoleColor.Yellow;
             Console.WriteLine($"\nZadanie 7:\n");
+            Console.ResetColor();
 
             int w = n.Length;
 
-            for(int i = 0; i < w - 1; i++)
+            for(int i = 0; i < w; i++)
             {
-                for(int j = 0; j < w - j - 1; j++)
+                for(int j = 0; j < w - i - 1; j++)
                 {
                     if (n[j] > n[j + 1])
                     {
@@ -217,7 +224,9 @@
 
         static Action<int[]> Zad8 = (n) =>
         {
+            Console.ForegroundColor = ConsoleColor.Yellow;
             Console.WriteLine($"\nZadanie 8:\n");
+            Console.ResetColor();
 
             int w = n.Length;
 
@@ -225,12 +234,19 @@
             {
                 int b = i;
 
-                for(int j = 0; j < w; j++)
+                for(int j = i + 1; j < w; j++)
                 {
                     if (n[j] < n[b])
                     {
                         b = j;
                     }
+                }
+
+                if(b != i)
+                {
+                    int v = n[i];
+                    n[i] = n[b];
+                    n[b] = v;
                 }
 
             }
@@ -249,6 +265,37 @@
         //  4. Proces kończy się, gdy wszystkie elementy znajdują się w posortowanej części.
         //  NIE STOSUJEMY ŻADNYCH METOD SORTUJĄCYCH ELEMENTY W TABLICY!
 
+        static Action<int[]> Zad9 = (n) =>
+        {
+            Console.ForegroundColor = ConsoleColor.Yellow;
+            Console.WriteLine($"\nZadanie 9:\n");
+            Console.ResetColor();
+
+            int w = n.Length;
+            int b;
+
+            for(int i = 0; i < w; i++)
+            {
+                b = n[i];
+                int j = i - 1; // to indeks elementu ktory bedziemy porownywać b
+
+                // Pętla wewnętrzna: porównujemy element 'b' z elementami po lewej stronie
+                // Dopóki nie znajdziemy odpowiedniego miejsca (czyli dopóki elementy po lewej są większe od 'b')
+                while (j >= 0 && n[j] > b)
+                {
+                   
+                    n[j + 1] = n[j]; // Przesuwamy element w prawo, aby zrobić miejsce dla 'b'
+                    j = j - 1; // Przechodzimy do poprzedniego elementu
+                }
+
+                n[j + 1] = b; 
+            }
+
+
+            Console.WriteLine(string.Join(", ", n));
+
+        };
+
 
         static void Main(string[] args)
         {
@@ -260,17 +307,20 @@
 
             Zad4(10);
 
-            Zad5(64);
+            Zad5(60);
 
-            int[] n = { 12, 5, 9, 20, 4 };
+            int[] n = { 12, 5, 9, 20, 4, 15, 12, 7 , 8 , 222};
+            int[] n2 = { 125, 5, 2, 32, 4, 15, 12, 55, 8, 222 };
+            int[] n3 = { 125, 52, 255, 32, 456, 15, 12, 55, 8, 222 };
 
             Zad6(n);
 
             Zad7(n);
 
-            Zad8(n);
+            Zad8(n2);
 
-            // Zad 9
+
+            Zad9(n3);
         }
 
     }
