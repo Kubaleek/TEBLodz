@@ -113,7 +113,6 @@
             }
 
             Console.WriteLine();
-
         };
 
 
@@ -123,6 +122,27 @@
         //  równa 1. Aby zwiększyć efektywność, możemy sprawdzać podzielność tylko do pierwiastka
         //  kwadratowego z liczby, ponieważ jeśli liczba ma dzielnik większy od swojego pierwiastka,
         //  to drugi dzielnik musi być mniejszy.
+
+        static Action<int> Zad5 = (a) =>
+        {
+            Console.WriteLine($"\nZadanie 5:\n");
+
+            if (a < 2)
+            {
+                Console.WriteLine("liczba musi być wieksza niż 1 \n");
+            }
+
+            Console.Write($"Czynniki pierwsze liczby {a} to: ");
+            for (int i = 2; i < a; i++)
+            {
+                while(a % i == 0)
+                {
+                    Console.Write($"{i} ");
+                    a /= i;
+                }
+            }
+        };
+
 
 
         //  Zasada działania algorytmu:
@@ -134,7 +154,7 @@
 
         static Action<int[]> Zad6 = (n) =>
         {
-            Console.WriteLine($"\nZadanie 6:\n");
+            Console.WriteLine($"\n\nZadanie 6:\n");
 
             int min = n[0];
             int max = n[0];
@@ -147,7 +167,7 @@
                     max = number;
             }
 
-            Console.WriteLine($"Najmniejszy element: {min}\n");
+            Console.WriteLine($"Najmniejszy element: {min}");
             Console.WriteLine($"Największy element: {max}");
         };
 
@@ -162,6 +182,29 @@
         //  4. Proces jest powtarzany aż do momentu, gdy w trakcie jednej pełnej iteracji nie dojdzie do
         //  żadnej zamiany.
 
+        static Action<int[]> Zad7 = (n) =>
+        {
+
+            Console.WriteLine($"\nZadanie 7:\n");
+
+            int w = n.Length;
+
+            for(int i = 0; i < w - 1; i++)
+            {
+                for(int j = 0; j < w - j - 1; j++)
+                {
+                    if (n[j] > n[j + 1])
+                    {
+                        int t = n[j];
+                        n[j] = n[j + 1];
+                        n[j + 1] = t;
+                    }
+                }
+            }
+
+            Console.WriteLine(string.Join(", ", n));
+        };
+
 
         //  Zasada działania algorytmu:
         //  1. Algorytm przechodzi przez zbiór elementów i znajduje najmniejszy element.
@@ -172,7 +215,29 @@
         //  4. Algorytm kończy pracę, gdy wszystkie elementy zostaną posortowane.
         //  NIE STOSUJEMY ŻADNYCH METOD SORTUJĄCYCH ELEMENTY W TABLICY!
 
+        static Action<int[]> Zad8 = (n) =>
+        {
+            Console.WriteLine($"\nZadanie 8:\n");
 
+            int w = n.Length;
+
+            for(int i = 0; i < w - 1; i++)
+            {
+                int b = i;
+
+                for(int j = 0; j < w; j++)
+                {
+                    if (n[j] < n[b])
+                    {
+                        b = j;
+                    }
+                }
+
+            }
+
+            Console.WriteLine(string.Join(", ", n));
+
+        };
 
         //  Zasada działania algorytmu:
         //  1. Lista elementów jest podzielona na dwie części – posortowaną i nieposortowaną.Na
@@ -195,15 +260,15 @@
 
             Zad4(10);
 
-            // Zad 5
+            Zad5(64);
 
             int[] n = { 12, 5, 9, 20, 4 };
 
             Zad6(n);
 
-            // Zad 7
+            Zad7(n);
 
-            // Zad 8
+            Zad8(n);
 
             // Zad 9
         }
