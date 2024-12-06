@@ -40,7 +40,7 @@
             </Grid>
 
             <Grid VerticalOptions="Center" Grid.Row="1" Grid.Column="1">
-                <Button x:Name="" BackgroundColor="white" TextColor="black" Text="OK" WidthRequest="650" Margin="24"/>
+                <Button x:Name="" BackgroundColor="white" TextColor="black" Text="OK" WidthRequest="450" Margin="24"/>
             </Grid>
         </Grid>
     </VerticalStackLayout>
