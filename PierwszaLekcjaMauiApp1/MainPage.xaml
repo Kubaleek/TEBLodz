@@ -1,0 +1,120 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="PierwszaLekcjaMauiApp1.MainPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    Background="#5F9EA0">
+
+    <ScrollView>
+        <VerticalStackLayout Padding="14" Spacing="14">
+            <Grid
+                ColumnDefinitions="3*, 3*"
+                ColumnSpacing="16"
+                RowDefinitions="auto, auto">
+                <Grid
+                    Padding="36"
+                    ColumnDefinitions="*, *"
+                    ColumnSpacing="16"
+                    RowDefinitions="*, *, *"
+                    RowSpacing="16">
+
+                    <Label
+                        Grid.Row="0"
+                        Grid.Column="0"
+                        FontSize="16"
+                        HorizontalOptions="Start"
+                        Text="Numer"
+                        TextColor="Black"
+                        VerticalOptions="Center" />
+                    <Entry
+                        x:Name="EntryNumber"
+                        Grid.Row="0"
+                        Grid.Column="1"
+                        Background="#F0FFFF"
+                        HorizontalOptions="Fill"
+                        Placeholder="Wpisz numer"
+                        TextColor="Black"
+                        WidthRequest="300" />
+
+                    <Label
+                        Grid.Row="1"
+                        Grid.Column="0"
+                        FontSize="16"
+                        HorizontalOptions="Start"
+                        Text="Imię"
+                        TextColor="Black"
+                        VerticalOptions="Center" />
+                    <Entry
+                        x:Name="EntryFirst"
+                        Grid.Row="1"
+                        Grid.Column="1"
+                        Background="#F0FFFF"
+                        HorizontalOptions="Fill"
+                        Placeholder="Wpisz imię"
+                        TextColor="Black"
+                        WidthRequest="300" />
+
+                    <Label
+                        Grid.Row="2"
+                        Grid.Column="0"
+                        FontSize="16"
+                        HorizontalOptions="Start"
+                        Text="Nazwisko"
+                        TextColor="Black"
+                        VerticalOptions="Center" />
+                    <Entry
+                        x:Name="EntrySecond"
+                        Grid.Row="2"
+                        Grid.Column="1"
+                        Background="#F0FFFF"
+                        HorizontalOptions="Fill"
+                        Placeholder="Wpisz nazwisko"
+                        TextColor="Black"
+                        WidthRequest="300" />
+                </Grid>
+                <Border
+                    Grid.Row="2"
+                    Grid.Column="0"
+                    Margin="36"
+                    Padding="24,36"
+                    Stroke="White">
+                    <Grid ColumnDefinitions="*, *" RowDefinitions="*">
+                        <StackLayout>
+                            <Label
+                                FontSize="16"
+                                Text="Kolor Oczu"
+                                TextColor="Black" />
+                            <RadioButton
+                                Content="Niebieski"
+                                IsChecked="True"
+                                TextColor="Black" />
+                            <RadioButton Content="Zielone" TextColor="Black" />
+                            <RadioButton Content="Piwne" TextColor="Black" />
+                        </StackLayout>
+                    </Grid>
+                </Border>
+                <Grid
+                    Grid.Row="0"
+                    Grid.Column="1"
+                    Padding="12"
+                    ColumnDefinitions="auto, auto"
+                    RowDefinitions="*">
+                    <Image
+                        Grid.Column="1"
+                        Source="dotnet_bot.png"
+                        WidthRequest="350" />
+                    <Image Source="dotnet_bot.png" WidthRequest="350" />
+                </Grid>
+                <Grid Grid.Row="2" Grid.Column="2">
+                    <Button
+                        BackgroundColor="White"
+                        Clicked="WyswietlKomunikat"
+                        HeightRequest="20"
+                        Text="Ok"
+                        WidthRequest="500" />
+                </Grid>
+            </Grid>
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>

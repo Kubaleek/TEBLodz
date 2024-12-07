@@ -2,7 +2,7 @@ using Microsoft.Maui;
 using Microsoft.Maui.Hosting;
 using System;
 
-namespace MauiApp_06._12._2024
+namespace PierwszaLekcjaMauiApp1
 {
     internal class Program : MauiApplication
     {
