@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Komputery</title>
+    <link rel="stylesheet" href="styl.css">
+    <script src="script.js"></script>
+</head>
+<body>
+    <div id="container">
+        <div id="baner"></div>
+        <div id="menu">
+            <a href="index.html">
+                Strona Główna
+            </a>
+            <a href="kontakt.html">
+                Kontakt
+            </a>
+        </div>
+        <div id="lewy">
+        </div>
+        <div id="srodkowy">
+            <h2>Kontakt</h2>
+            <table>
+                <tr>
+                    <td>Imie:</td>
+                    <td><input type="text" name="" id="imie"></td>
+                </tr>
+                <tr>
+                    <td>Nazwisko:</td>
+                    <td><input type="text" name="" id="nazwisko"></td>
+                </tr>
+                <tr>
+                    <td>E-mail:</td>
+                    <td><input type="email" name="" id="email"></td>
+                </tr>
+                <tr>
+                    <td>Zgłoszenie:</td>
+                    <td>
+                        <select id="zgloszenia">
+                            <option value="naprawa komputerów">naprawa komputerów</option>
+                            <option value="odzyskiwanie danych">odzyskiwanie danych</option>
+                            <option value="wirusy">wirusy</option>
+                            <option value="konfiguracja LAN">konfiguracja LAN</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td><input type="checkbox" name="" id="" checked>Wyślij kopię wiadomości</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>
+                        <button type="reset">Czyść</button> <button type="submit" onclick="DodajKomunikat()">Wyślij</button>
+                    </td>
+                </tr>
+            </table>
+            <hr />
+            <p id="wynik"></p>
+        </div>
+        <div id="prawy">
+        </div>
+        <footer id="stopka">
+            Autor: 000000000000000
+        </footer>
+    </div>
+</body>
+</html>
