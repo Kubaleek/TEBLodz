@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CalculatorMaui.MainPage">
+
+    <ScrollView>
+        <VerticalStackLayout>
+            <Grid RowDefinitions="*, *, *" Padding="12" RowSpacing="24" HorizontalOptions="Fill" VerticalOptions="Fill">
+                <Grid Grid.Row="0" ColumnDefinitions="*, *" HorizontalOptions="Fill" VerticalOptions="Center" >
+                    <Grid ColumnDefinitions="*, 5*" ColumnSpacing="12" HorizontalOptions="Start" VerticalOptions="Start"> 
+                        <Image Source="menu.png" WidthRequest="24" HeightRequest="24" HorizontalOptions="Start" VerticalOptions="Start" />
+                        <Label Grid.Column="1" Text="Standardowy" FontSize="16" FontAttributes="Bold" />
+                    </Grid>
+                    <Image Grid.Column="2" Source="history.png" WidthRequest="24" HeightRequest="24"  HorizontalOptions="End" VerticalOptions="End" />
+                </Grid>
+                <Label Grid.Row="1" x:Name="result" Text="0" FontSize="32" FontAttributes="Bold"  />
+            </Grid>
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>
