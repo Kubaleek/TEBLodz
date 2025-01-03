@@ -1,21 +1,57 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="CalculatorMaui.MainPage">
+             x:Class="CalculatorMaui.MainPage"
+             BackgroundColor="#333">
 
-    <ScrollView>
-        <VerticalStackLayout>
-            <Grid RowDefinitions="*, *, *" Padding="12" RowSpacing="24" HorizontalOptions="Fill" VerticalOptions="Fill">
+    <VerticalStackLayout>
+        <Grid RowDefinitions="*, auto" Padding="12" RowSpacing="24" HorizontalOptions="Fill" VerticalOptions="Fill">
+            <Grid Grid.Row="0" RowDefinitions="*, *" RowSpacing="24">
                 <Grid Grid.Row="0" ColumnDefinitions="*, *" HorizontalOptions="Fill" VerticalOptions="Center" >
-                    <Grid ColumnDefinitions="*, 5*" ColumnSpacing="12" HorizontalOptions="Start" VerticalOptions="Start"> 
+                    <Grid ColumnDefinitions="*, 5*" ColumnSpacing="12" HorizontalOptions="Start" VerticalOptions="Start">
                         <Image Source="menu.png" WidthRequest="24" HeightRequest="24" HorizontalOptions="Start" VerticalOptions="Start" />
                         <Label Grid.Column="1" Text="Standardowy" FontSize="16" FontAttributes="Bold" />
                     </Grid>
                     <Image Grid.Column="2" Source="history.png" WidthRequest="24" HeightRequest="24"  HorizontalOptions="End" VerticalOptions="End" />
                 </Grid>
-                <Label Grid.Row="1" x:Name="result" Text="0" FontSize="32" FontAttributes="Bold"  />
+                <Grid Grid.Row="1">
+                    <Label x:Name="numResult" FontSize="32" FontAttributes="Bold" HorizontalTextAlignment="End" VerticalTextAlignment="End" HorizontalOptions="End" VerticalOptions="End" />
+                </Grid>
             </Grid>
-        </VerticalStackLayout>
-    </ScrollView>
+            <Grid Grid.Row="1" RowDefinitions="*, *, *, *, *, *, *" RowSpacing="12" HorizontalOptions="Fill" VerticalOptions="Fill">
+                <Grid Grid.Row="0" ColumnDefinitions="*,*" ColumnSpacing="6">
+                    <Button Grid.Column="0" Text="C" CornerRadius="0" FontSize="18" BackgroundColor="Transparent" TextColor="White" BorderWidth="1" BorderColor="White" Clicked="HandleClearAll" />
+                    <ImageButton Source="delete.png" Grid.Column="1" CornerRadius="0" BackgroundColor="Transparent" BorderWidth="1" BorderColor="White" Clicked="HandleClear"  />
+                </Grid>
+                <Grid Grid.Row="1" ColumnDefinitions="*,*,*" ColumnSpacing="6">
+                    <Button Grid.Column="0" Text="7" CornerRadius="0" FontSize="18" BackgroundColor="Transparent" TextColor="White" BorderWidth="1" BorderColor="White" Clicked="ButtonClickedHandle" />
+                    <Button Grid.Column="1" Text="8" CornerRadius="0" FontSize="18" BackgroundColor="Transparent" TextColor="White" BorderWidth="1" BorderColor="White" Clicked="ButtonClickedHandle" />
+                    <Button Grid.Column="2" Text="9" CornerRadius="0" FontSize="18" BackgroundColor="Transparent" TextColor="White" BorderWidth="1" BorderColor="White" Clicked="ButtonClickedHandle"/>
+                </Grid>
+                <Grid Grid.Row="2" ColumnDefinitions="*,*,*" ColumnSpacing="6">
+                    <Button Grid.Column="0" Text="4" CornerRadius="0" FontSize="18" BackgroundColor="Transparent" TextColor="White" BorderWidth="1" BorderColor="White" Clicked="ButtonClickedHandle" />
+                    <Button Grid.Column="1" Text="5" CornerRadius="0" FontSize="18" BackgroundColor="Transparent" TextColor="White" BorderWidth="1" BorderColor="White" Clicked="ButtonClickedHandle" />
+                    <Button Grid.Column="2" Text="6" CornerRadius="0" FontSize="18" BackgroundColor="Transparent" TextColor="White" BorderWidth="1" BorderColor="White" Clicked="ButtonClickedHandle"/>
+                </Grid>
+                <Grid Grid.Row="3" ColumnDefinitions="*,*,*" ColumnSpacing="6">
+                    <Button Grid.Column="0" Text="1" CornerRadius="0" FontSize="18" BackgroundColor="Transparent" TextColor="White" BorderWidth="1" BorderColor="White" Clicked="ButtonClickedHandle" />
+                    <Button Grid.Column="1" Text="2" CornerRadius="0" FontSize="18" BackgroundColor="Transparent" TextColor="White" BorderWidth="1" BorderColor="White" Clicked="ButtonClickedHandle" />
+                    <Button Grid.Column="2" Text="3" CornerRadius="0" FontSize="18" BackgroundColor="Transparent" TextColor="White" BorderWidth="1" BorderColor="White" Clicked="ButtonClickedHandle"/>
+                </Grid>
+                <Grid Grid.Row="4" ColumnDefinitions="*">
+                    <Button Grid.Column="0" Text="0" CornerRadius="0" FontSize="18" BackgroundColor="Transparent" TextColor="White" BorderWidth="1" BorderColor="White" Clicked="ButtonClickedHandle" />
+                </Grid>
+                <Grid Grid.Row="5" ColumnDefinitions="*,*,*,*" ColumnSpacing="6">
+                    <Button Grid.Column="0" Text="/" CornerRadius="0" FontSize="18" BackgroundColor="Transparent" Clicked="HandleOperators" TextColor="White" BorderWidth="1" BorderColor="White" />
+                    <Button Grid.Column="1" Text="-" CornerRadius="0" FontSize="18" BackgroundColor="Transparent" Clicked="HandleOperators" TextColor="White" BorderWidth="1" BorderColor="White" />
+                    <Button Grid.Column="2" Text="*" CornerRadius="0" FontSize="18" BackgroundColor="Transparent" Clicked="HandleOperators" TextColor="White" BorderWidth="1" BorderColor="White" />
+                    <Button Grid.Column="3" Text="+" CornerRadius="0" FontSize="18" BackgroundColor="Transparent" Clicked="HandleOperators" TextColor="White" BorderWidth="1" BorderColor="White" />
+                </Grid>
+                <Grid Grid.Row="6" ColumnDefinitions="*" ColumnSpacing="6">
+                    <Button Grid.Column="0" Text="=" CornerRadius="0" FontSize="18" BackgroundColor="LightGray" TextColor="Black" BorderWidth="1" BorderColor="White" Clicked="HandleResult" />
+                </Grid>
+            </Grid>
+        </Grid>
+    </VerticalStackLayout>
 
 </ContentPage>

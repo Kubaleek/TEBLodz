@@ -14,12 +14,15 @@
             var window = base.CreateWindow(activationState);
 
             const int newWidth = 340;
-            const int newHeight = 540;
+            const int newHeight = 580;
 
             window.Width = newWidth;
             window.Height = newHeight;
+            window.MinimumWidth = 340;
+            window.MinimumHeight = 580;
 
             return window;
+
         }
     }
 }
